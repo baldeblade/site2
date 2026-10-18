@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f2eee8">
+  <meta name="description" content="Cheerend — спокойная одежда из шерсти, льна и хлопка. Небольшие партии, честные ткани.">
+  <title>Cheerend — одежда на каждый день</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.documentElement.dataset.theme =
+      localStorage.getItem("cheerend-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  </script>
+</head>
+<body>
+
+  <div class="topline">
+    <p>Промокод <b>CHEER10</b> — минус 10% на первый заказ &nbsp;·&nbsp; Доставка бесплатно от 5 000 ₽</p>
+  </div>
+
+  <header class="header">
+    <button class="icon-btn menu-toggle" type="button" aria-label="Открыть меню" aria-controls="menu" aria-expanded="false">
+      <span class="burger" aria-hidden="true"></span>
+    </button>
+
+    <a href="#" class="logo">Cheerend</a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a>
+      <a href="#about">О нас</a>
+      <a href="#info">Доставка</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Сменить тему">
+        <span class="theme-ico" aria-hidden="true"></span>
+      </button>
+      <button class="icon-btn fav-btn" type="button" data-fav-open aria-label="Избранное">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5l-1.4-1.3C5.4 14.5 2 11.4 2 7.7 2 4.6 4.4 2.5 7.3 2.5c1.7 0 3.4.8 4.7 2.1 1.3-1.3 3-2.1 4.7-2.1 2.9 0 5.3 2.1 5.3 5.2 0 3.7-3.4 6.8-8.6 11.5L12 20.5z"/></svg>
+        <span class="fav-count" data-fav-count hidden>0</span>
+      </button>
+      <button class="cart-btn" type="button" aria-label="Открыть корзину" aria-controls="cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-btn__text">Корзина</span>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Меню -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__head">
+      <span class="logo">Cheerend</span>
+      <button class="icon-btn" type="button" data-close="menu" aria-label="Закрыть меню">&times;</button>
+    </div>
+    <nav class="menu__nav" aria-label="Мобильное меню">
+      <a href="#catalog" data-filter-link="all">Весь каталог</a>
+      <a href="#catalog" data-filter-link="top">Свитеры и рубашки</a>
+      <a href="#catalog" data-filter-link="bottom">Брюки</a>
+      <a href="#catalog" data-filter-link="outer">Пальто</a>
+      <a href="#catalog" data-filter-link="acc">Аксессуары</a>
+    </nav>
+    <div class="menu__foot">
+      <a href="#about">О нас</a>
+      <a href="#info">Доставка и возврат</a>
+      <a href="tel:+79000000000">+7 900 000-00-00</a>
+      <button class="menu__theme" type="button" data-theme-toggle>
+        <span class="theme-ico" aria-hidden="true"></span> Светлая / тёмная тема
+      </button>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero__text">
+        <p class="label">Осень — зима 2026</p>
+        <h1>Вещи, которые<br>не&nbsp;надо <em>беречь</em></h1>
+        <p class="hero__lead">
+          Шьём небольшими партиями в Иваново. Шерсть, лён и плотный хлопок — то, что носится годами и со временем становится только лучше.
+        </p>
+        <div class="hero__actions">
+          <a href="#catalog" class="btn">Смотреть каталог</a>
+          <a href="#about" class="btn btn--ghost">О бренде</a>
+        </div>
+        <ul class="stats">
+          <li><b>2021</b>шьём с этого года</li>
+          <li><b>6</b>человек в цехе</li>
+          <li><b>4,9</b>средняя оценка</li>
+        </ul>
+      </div>
+      <figure class="hero__img">
+        <img src="images/hero.png" alt="Девушка в пальто цвета овсянки и серых шерстяных брюках у бетонной стены" width="768" height="1376">
+        <figcaption>Пальто «Север», брюки «Тихие»</figcaption>
+      </figure>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Шерсть мериноса</span><span>Стираный лён</span><span>Плотный хлопок</span><span>Шьём в Иваново</span><span>Примерка при получении</span>
+        <span>Шерсть мериноса</span><span>Стираный лён</span><span>Плотный хлопок</span><span>Шьём в Иваново</span><span>Примерка при получении</span>
+      </div>
+    </div>
+
+    <section class="catalog" id="catalog">
+      <div class="section-head">
+        <h2>Каталог</h2>
+        <div class="filters" role="group" aria-label="Фильтр по категориям">
+          <button class="chip is-active" type="button" data-filter="all">Всё</button>
+          <button class="chip" type="button" data-filter="top">Верх</button>
+          <button class="chip" type="button" data-filter="bottom">Низ</button>
+          <button class="chip" type="button" data-filter="outer">Пальто</button>
+          <button class="chip" type="button" data-filter="acc">Аксессуары</button>
+          <button class="chip" type="button" data-filter="fav">Избранное</button>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search">
+          <span class="sr-only">Поиск по каталогу</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" placeholder="Свитер, лён…" data-search>
+        </label>
+        <label class="sort">
+          <span class="sr-only">Сортировка</span>
+          <select data-sort>
+            <option value="default">Популярное</option>
+            <option value="asc">Дешевле</option>
+            <option value="desc">Дороже</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="catalog__empty" data-catalog-empty hidden></p>
+
+      <ul class="grid">
+        <li class="card" data-id="sw-01" data-name="Свитер «Овсянка»" data-price="7900" data-img="images/p1.png" data-cat="top">
+          <div class="card__img"><img src="images/p1.png" alt="Кремовый свитер крупной вязки на деревянной вешалке" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__row">
+              <h3>Свитер «Овсянка»</h3>
+              <span class="price">7 900 ₽</span>
+            </div>
+            <p class="card__note">Шерсть мериноса 70%, крупная вязка</p>
+            <div class="card__actions">
+              <label class="sr-only" for="size-sw-01">Размер</label>
+              <select id="size-sw-01" class="size">
+                <option>XS</option><option selected>S</option><option>M</option><option>L</option>
+              </select>
+              <button class="add" type="button">В корзину</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="card" data-id="sh-02" data-name="Рубашка «Шалфей»" data-price="5400" data-img="images/p2.png" data-cat="top">
+          <div class="card__img"><img src="images/p2.png" alt="Сложенная льняная рубашка цвета шалфея" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__row">
+              <h3>Рубашка «Шалфей»</h3>
+              <span class="price">5 400 ₽</span>
+            </div>
+            <p class="card__note">Стираный лён, свободный крой</p>
+            <div class="card__actions">
+              <label class="sr-only" for="size-sh-02">Размер</label>
+              <select id="size-sh-02" class="size">
+                <option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option>
+              </select>
+              <button class="add" type="button">В корзину</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="card" data-id="tr-03" data-name="Брюки «Тихие»" data-price="6200" data-img="images/p3.png" data-cat="bottom">
+          <div class="card__img"><img src="images/p3.png" alt="Серые широкие шерстяные брюки на вешалке" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__row">
+              <h3>Брюки «Тихие»</h3>
+              <span class="price">6 200 ₽</span>
+            </div>
+            <p class="card__note">Костюмная шерсть, высокая посадка</p>
+            <div class="card__actions">
+              <label class="sr-only" for="size-tr-03">Размер</label>
+              <select id="size-tr-03" class="size">
+                <option>XS</option><option selected>S</option><option>M</option><option>L</option>
+              </select>
+              <button class="add" type="button">В корзину</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="card" data-id="ct-04" data-name="Пальто «Север»" data-price="18500" data-img="images/p4.png" data-cat="outer">
+          <div class="card__img">
+            <span class="tag">Осталось 4</span>
+            <img src="images/p4.png" alt="Длинное шерстяное пальто цвета кэмел" loading="lazy">
+          </div>
+          <div class="card__body">
+            <div class="card__row">
+              <h3>Пальто «Север»</h3>
+              <span class="price">18 500 ₽</span>
+            </div>
+            <p class="card__note">Шерсть 80%, подклад из вискозы</p>
+            <div class="card__actions">
+              <label class="sr-only" for="size-ct-04">Размер</label>
+              <select id="size-ct-04" class="size">
+                <option>S</option><option selected>M</option><option>L</option>
+              </select>
+              <button class="add" type="button">В корзину</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="card" data-id="ts-05" data-name="Футболка «Пыльная роза»" data-price="2300" data-img="images/p5.png" data-cat="top">
+          <div class="card__img"><img src="images/p5.png" alt="Сложенная хлопковая футболка пыльно-розового цвета" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__row">
+              <h3>Футболка «Пыльная роза»</h3>
+              <span class="price">2 300 ₽</span>
+            </div>
+            <p class="card__note">Плотный хлопок 240 г/м²</p>
+            <div class="card__actions">
+              <label class="sr-only" for="size-ts-05">Размер</label>
+              <select id="size-ts-05" class="size">
+                <option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option>
+              </select>
+              <button class="add" type="button">В корзину</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="card" data-id="ac-06" data-name="Шопер и шапка" data-price="2900" data-img="images/p6.png" data-cat="acc">
+          <div class="card__img"><img src="images/p6.png" alt="Холщовый шопер и вязаная шапка на деревянном табурете" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__row">
+              <h3>Шопер и шапка</h3>
+              <span class="price">2 900 ₽</span>
+            </div>
+            <p class="card__note">Комплект: хлопковый канвас + шерсть</p>
+            <div class="card__actions">
+              <label class="sr-only" for="size-ac-06">Размер</label>
+              <select id="size-ac-06" class="size">
+                <option selected>One size</option>
+              </select>
+              <button class="add" type="button">В корзину</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about" id="about">
+      <img src="images/look.png" alt="Парень в льняной рубашке сидит на каменных ступенях" loading="lazy">
+      <div class="about__text">
+        <p class="label">Почему Cheerend</p>
+        <h2>Начинали с одного свитера для себя</h2>
+        <p>
+          В 2021 году мы связали свитер, который не хотелось снимать всю зиму. Потом друзья попросили такой же. Сейчас нас шесть человек, маленький цех и ткани от двух фабрик, с которыми мы знакомы лично.
+        </p>
+        <p>
+          Мы не делаем распродаж каждую неделю и не выпускаем по сто моделей за сезон. Лучше меньше, но так, чтобы вещь не пришлось выкидывать через полгода.
+        </p>
+        <p class="sign">— Аня и Костя, основатели</p>
+      </div>
+    </section>
+
+    <section class="info" id="info">
+      <div>
+        <h3>Доставка</h3>
+        <p>СДЭК и Почта России, 2–6 дней. По Москве курьером на следующий день — 350 ₽.</p>
+      </div>
+      <div>
+        <h3>Возврат</h3>
+        <p>14 дней на возврат без объяснения причин. Бирки только не отрезайте.</p>
+      </div>
+      <div>
+        <h3>Уход</h3>
+        <p>Шерсть — ручная стирка в холодной воде. Лён можно в машинку, гладить не обязательно.</p>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <h2>Частые вопросы</h2>
+      <div class="faq__list">
+        <details>
+          <summary>Как подобрать размер?</summary>
+          <p>Мы шьём свободно, поэтому берите свой обычный размер. Если сомневаетесь между двумя — берите меньший. Можно заказать оба и вернуть лишний курьеру.</p>
+        </details>
+        <details>
+          <summary>Шерсть колется?</summary>
+          <p>Нет. Мы используем тонкий меринос 18,5 микрон — его носят прямо на тело. Первые пару носок может немного «пушиться», это нормально.</p>
+        </details>
+        <details>
+          <summary>Можно ли примерить перед оплатой?</summary>
+          <p>Да. Курьер СДЭК подождёт 15 минут, пока вы примеряете. Платите только за то, что оставили.</p>
+        </details>
+        <details>
+          <summary>Будут ли новые цвета?</summary>
+          <p>Да, каждую осень и весну. Подпишитесь на письмо ниже — подписчики узнают о новинках первыми.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="news">
+      <div>
+        <h2>Письмо раз в месяц</h2>
+        <p>Новые вещи, истории из цеха и закрытые предложения. Без спама, честно.</p>
+      </div>
+      <form class="news__form" data-news>
+        <label class="sr-only" for="news-email">Email</label>
+        <input id="news-email" type="email" name="email" placeholder="you@mail.ru" autocomplete="email" required>
+        <button class="btn" type="submit">Подписаться</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">Cheerend</span>
+      <p>Иваново — Москва</p>
+    </div>
+    <div class="footer__links">
+      <a href="#">Telegram</a>
+      <a href="#">VK</a>
+      <a href="mailto:hello@cheerend.ru">hello@cheerend.ru</a>
+    </div>
+    <p class="footer__copy">© 2026 Cheerend</p>
+  </footer>
+
+  <!-- Корзина -->
+  <div class="overlay" data-overlay hidden></div>
+
+  <aside class="cart" id="cart" aria-hidden="true" aria-label="Корзина">
+    <div class="cart__head">
+      <h2>Корзина</h2>
+      <button class="icon-btn" type="button" data-close="cart" aria-label="Закрыть корзину">&times;</button>
+    </div>
+
+    <ul class="cart__list" data-cart-list></ul>
+
+    <p class="cart__empty" data-cart-empty>
+      Пока пусто. Загляните в <a href="#catalog" data-close="cart">каталог</a>.
+    </p>
+
+    <div class="cart__foot" data-cart-foot hidden>
+      <div class="ship">
+        <p class="ship__text" data-ship-text></p>
+        <div class="ship__bar"><span data-ship-bar></span></div>
+      </div>
+
+      <form class="promo" data-promo>
+        <label class="sr-only" for="promo">Промокод</label>
+        <input id="promo" name="promo" placeholder="Промокод" autocomplete="off">
+        <button type="submit">Применить</button>
+      </form>
+      <p class="promo__msg" data-promo-msg></p>
+
+      <div class="cart__row" data-discount-row hidden>
+        <span>Скидка</span>
+        <span data-cart-discount></span>
+      </div>
+      <div class="cart__total">
+        <span>Итого</span>
+        <span data-cart-total>0 ₽</span>
+      </div>
+
+      <form class="checkout" data-checkout>
+        <label>
+          Имя
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          Телефон
+          <input type="tel" name="phone" autocomplete="tel" placeholder="+7" required>
+        </label>
+        <button class="btn btn--full" type="submit">Оформить заказ</button>
+        <p class="checkout__hint">Перезвоним в течение часа, чтобы уточнить адрес.</p>
+      </form>
+    </div>
+
+    <p class="cart__done" data-cart-done hidden>
+      Спасибо! Заказ принят, скоро позвоним.
+    </p>
+  </aside>
+
+  <!-- Быстрый просмотр -->
+  <dialog class="qv" data-qv aria-label="Быстрый просмотр">
+    <button class="icon-btn qv__close" type="button" data-qv-close aria-label="Закрыть">&times;</button>
+    <div class="qv__inner">
+      <div class="qv__img">
+        <img src="images/p1.png" alt="" data-qv-img>
+        <button class="fav" type="button" data-fav="" data-qv-fav aria-label="В избранное">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5l-1.4-1.3C5.4 14.5 2 11.4 2 7.7 2 4.6 4.4 2.5 7.3 2.5c1.7 0 3.4.8 4.7 2.1 1.3-1.3 3-2.1 4.7-2.1 2.9 0 5.3 2.1 5.3 5.2 0 3.7-3.4 6.8-8.6 11.5L12 20.5z"/></svg>
+        </button>
+      </div>
+      <div class="qv__body">
+        <p class="label" data-qv-cat></p>
+        <h2 data-qv-name></h2>
+        <p class="qv__price" data-qv-price></p>
+        <p class="qv__note" data-qv-note></p>
+        <fieldset class="sizes" data-qv-sizes>
+          <legend>Размер</legend>
+        </fieldset>
+        <button class="btn btn--full" type="button" data-qv-add>В корзину</button>
+        <ul class="qv__perks">
+          <li>Примерка при получении</li>
+          <li>Возврат 14 дней</li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
